@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="LMin,雨会停,心会晴" />
+    <meta name="description" content="坐上我的时光机，我的故事，与你分享！By:Min.L">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>加载中...By:LMin & 雨会停,心会晴</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+    <audio src="http://od1ax8l5i.bkt.clouddn.com/music.mp3" autoplay="true" loop="loop"></audio>
+    <div id="back">
+        <div class="mask"></div>
+        <!-- 设置展示的图片，github pages不能有后台程序只能一条一条手动添加了 囧 -->
+        <div id="carousel"  class="carousel slide carousel-fade carousel-position">
+            <div class="carousel-inner" style="width: 100%;height: 100%;" id="background">
+                <div class="item active" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background:url(http://od1ax8l5i.bkt.clouddn.com/1.png);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/2.jpg) ;background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/3.jpeg) ;background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/4.jpg) ;background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/5.jpg);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/6.jpg);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/7.jpg);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/8.jpg);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/9.jpg);background-size: cover;"></div>
+                </div>
+                 <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(http://od1ax8l5i.bkt.clouddn.com/10.jpg);background-size: cover;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal show" style="top:24%;">
+        <div class="modal-dialog" style="opacity: .9">
+            <div class="modal-content" style="opacity:.85">
+                <div class="modal-header">
+                    <h1 class="text-center" style="color: #A94442;font-family: 'JournalRegular', Arial, sans-serif;font-size: 7rem;">Time Machine</h1>
+                    <p class="text-center small-title">By: L.Min & 雨会停,心会晴</p>
+                    <br>
+                    <p class="text-center small-title">不会散-不会忘-不会变</p>
+                </div>
+                <div class="modal-body text-center" style="line-height: 1.5rem;font-family: 'JournalRegular', Arial, sans-serif;font-size: 3rem;">
+                    <p>
+                        <span style="color:#A94442;font-size: 15px;">我的故事 与你共享 </span><span style="color:#A94442"> together</span>
+                    </p>                  
+                    <p>
+                        May the people you meet is family.
+                    </p>
+                    <p class="text-center" style="color:#A94442;font-size: 17px" id="say"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/count-time.js"></script>
+    <script>
+    $(function() {
+         $(document).attr("title", "时光不老,我们不散，感谢相伴。");
+
+        //设置每一张图片对应的文字
+        var says = new Array(
+            "阳光正好，微风不燥，心情甚好",
+            "我还在这里等你 等待被传染",
+            "为学弟学妹们加油↖(^ω^)↗",
+            "微抬下颌，你是否也在触摸那一抹相同的月色",
+            "当善良在别人眼里成为一种习惯，或许我应该学会拒绝。",
+            "昙花一现，惊鸿一瞥，只此一眼，便再难忘记....",
+            "我学医 我自豪",
+            "待我长发及腰，我们去剪了它可好(不过长发确实漂亮呐)",
+            "回家！回家！早起的人儿坐车回家！",
+            "一路相伴,感谢有你"
+        );
+
+
+        var start = function() {
+            var index = 0;
+            var rate = 6000;
+            $('#say').text(says[(index++) % says.length]);
+            setInterval(() => {
+                $('#say').hide();
+                $('#say').text(says[(index++) % says.length]);
+                $('#say').fadeToggle();
+                $('#carousel').carousel('next');
+            }, rate);
+        }();
+
+
+    });
+    </script>
+</body>
+
+</html>
